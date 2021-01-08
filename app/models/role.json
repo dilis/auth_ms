@@ -1,0 +1,33 @@
+{
+  "name": "Role",
+  "fields": {
+    "name": {
+      "type": "string",
+      "desc": "Name of the role"
+    },
+    "description": {
+      "type": "string",
+      "desc": "Description of the role"
+    },
+    "acl": {
+      "type": "list",
+      "fields": {
+        "model": {
+          "type": "string"
+        },
+        "can_create": {
+          "type": "boolean"
+        },
+        "can_read": {
+          "type": "boolean"
+        },
+        "can_update": {
+          "type": "boolean"
+        },
+        "can_delete": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

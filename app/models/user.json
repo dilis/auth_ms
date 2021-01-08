@@ -1,0 +1,48 @@
+{
+  "name": "User",
+  "fields": {
+    "login": {
+      "type": "string",
+      "desc": "Login of the user"
+    },
+    "first_name": {
+    "type": "string",
+    "desc": "First name of the user"
+    },
+    "middle_name": {
+      "type": "string",
+      "desc": "Middle name of the user"
+    },
+    "last_name": {
+      "type": "string",
+      "desc": "Last name of the user"
+    },
+    "email": {
+      "type": "string"
+    },
+    "pw_hash": {
+      "type": "string",
+      "desc": "Hash of the password"
+    },
+    "pkey": {
+      "type": "string",
+      "desc": "Private key of the user"
+    },
+    "type": {
+      "type": "selection",
+      "values": {
+        "person": "Person",
+        "agent": "Service Account"
+      },
+      "default": "person"
+    },
+    "roles": {
+      "type": "list",
+      "fields": {
+        "comodel": {
+          "type": "object_id"
+        }
+      }
+    }
+  }
+}
