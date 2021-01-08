@@ -32,10 +32,10 @@ function validateModelName(req, res, next) {
 }
 
 router.post('/:modelName', validateToken, validateModelName, createDoc);
-router.get('/:modelName/:docId', validateModelName, getDoc);
-router.get('/:modelName', validateModelName, searchDoc);
-router.put('/:modelName/:docId', validateModelName, replaceDoc);
-router.patch('/:modelName/:docId', validateModelName, updateDoc);
-router.delete('/:modelName/:docId', validateModelName, deleteDoc);
+router.get('/:modelName/:docId', validateToken, validateModelName, getDoc);
+router.get('/:modelName', validateToken,validateModelName, searchDoc);
+router.put('/:modelName/:docId', validateToken,validateModelName, replaceDoc);
+router.patch('/:modelName/:docId', validateToken,validateModelName, updateDoc);
+router.delete('/:modelName/:docId', validateToken,validateModelName, deleteDoc);
 
 module.exports = router;
