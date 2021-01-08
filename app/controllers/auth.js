@@ -46,7 +46,9 @@ async function signIn(req, res) {
   const payload = {
     user_id: user.id
   }
-  const token = await jwt.sign(payload, '1234567', {expiresIn: 300});
+  const token = await jwt.sign(payload,
+    process.env.ACCESS_TOKEN_SECRET, 
+    {expiresIn: 300});
   res.json({token});
 }
 
