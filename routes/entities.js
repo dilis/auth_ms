@@ -11,6 +11,8 @@ const {
   deleteDoc,
 } = require('../app/controllers');
 
+const {validateToken} = require('../app/middlewares/validate_token');
+
 function validateModelName(req, res, next) {
   console.log(req.params);
   console.log('in validate')
@@ -29,7 +31,7 @@ function validateModelName(req, res, next) {
   next();
 }
 
-router.post('/:modelName', validateModelName, createDoc);
+router.post('/:modelName', validateToken, validateModelName, createDoc);
 router.get('/:modelName/:docId', validateModelName, getDoc);
 router.get('/:modelName', validateModelName, searchDoc);
 router.put('/:modelName/:docId', validateModelName, replaceDoc);
