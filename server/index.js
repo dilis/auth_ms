@@ -5,7 +5,7 @@ const Database = require('./app/database');
 const app = express();
 const main = require('./app');
 
-const database = Database.forUrl(process.env.db_url);
+const database = Database.forUrl(process.env.DB_URL);
 main(database);
 
 app.use(express.json());
